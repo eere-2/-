@@ -6,34 +6,48 @@
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(to bottom, #fbd3e9, #bb377d);
+      background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
       margin: 0;
       padding: 0;
       text-align: center;
-      color: #4a0033;
+      color: #333;
     }
     .card {
-      background: #ffe6f2;
-      margin: 20px;
+      background: #fff0f6;
+      margin: 15px;
       padding: 20px;
       border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     .title {
       font-size: 22px;
       color: #d63384;
       font-weight: bold;
-    }
-    .subtitle {
-      font-size: 18px;
-      margin: 10px 0;
+      margin-bottom: 10px;
     }
     .highlight {
       color: #e60073;
       font-weight: bold;
     }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      font-size: 16px;
+      margin: 5px 0;
+    }
     .footer {
-      margin-top: 20px;
+      margin: 20px;
       font-size: 13px;
       color: #660033;
     }
@@ -41,32 +55,55 @@
 </head>
 <body>
 
+  <!-- الصورة الشخصية -->
   <div class="card">
-    <img src="https://i.ibb.co/YdM3w2s/user.png" alt="صورة شخصية" style="width:120px;height:120px;border-radius:50%;border:4px solid white;">
-    <h2 class="title">✨ بطاقة المعلومات الشخصية ✨</h2>
-    <p class="subtitle">مرحباً بكم في ملفي الشخصي 💖</p>
+    <img src="your-photo.jpg" alt="صورة شخصية" class="profile-pic">
+    <p class="title">✨ بطاقة المعلومات الشخصية ✨</p>
   </div>
 
+  <!-- التوقيت -->
   <div class="card">
-    <p>⏰ توقيت العراق الآن</p>
+    <p class="title">⏰ توقيت العراق الآن</p>
     <p id="time" class="highlight"></p>
   </div>
 
+  <!-- الاسم -->
   <div class="card">
-    <p>📍 السكن: <span class="highlight">العراق – ذي قار</span></p>
+    <p class="title">👤 الاسم</p>
+    <p class="highlight">ابـاذر</p>
   </div>
 
+  <!-- السكن -->
   <div class="card">
-    <p class="title">💖 هواياتي المفضلة 💖</p>
-    <ul style="list-style:none;padding:0;">
+    <p class="title">📍 السكن</p>
+    <p class="highlight">العراق – ذي قار</p>
+  </div>
+
+  <!-- السيرة الذاتية -->
+  <div class="card">
+    <p class="title">📖 السيرة الذاتية</p>
+    <p class="highlight">ناجح بمعدل 99.14</p>
+  </div>
+
+  <!-- التخصص -->
+  <div class="card">
+    <p class="title">🎓 التخصص</p>
+    <p class="highlight">صيدلة</p>
+  </div>
+
+  <!-- الهوايات -->
+  <div class="card">
+    <p class="title">💡 هواياتي</p>
+    <ul>
       <li>⚽ الرياضة</li>
       <li>📚 قراءة كتب التاريخ</li>
-      <li>🎌 مشاهدة الأنمي</li>
     </ul>
   </div>
 
+  <!-- مقولة اليوم -->
   <div class="card">
-    <p class="title">👤 الاسم: <span class="highlight">ابـاذر</span></p>
+    <p class="title">🌸 مقولة اليوم 🌸</p>
+    <p class="highlight">(( سَيعودُ حَقُك ذاتَ يوم ))</p>
   </div>
 
   <div class="footer">
