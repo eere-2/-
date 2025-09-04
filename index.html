@@ -2,91 +2,85 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>✨ بطاقتي الشخصية ✨</title>
+  <title>✨ الملف الشخصي - ابـاذر ✨</title>
   <style>
     body {
+      font-family: 'Tahoma', sans-serif;
+      background: linear-gradient(to bottom, #fbd3e9, #bb377d);
       margin: 0;
-      font-family: "Tahoma", sans-serif;
-      background: linear-gradient(135deg, #fbd3e9, #bb377d);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .card {
-      background: #fff0f5;
-      border-radius: 20px;
-      box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
-      padding: 20px;
-      width: 320px;
+      padding: 0;
       text-align: center;
+      color: #4a0033;
     }
-
-    .card img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    .card {
+      background: #ffe6f2;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
-    h2 {
-      color: #d63384;
-      margin: 15px 0 5px;
-    }
-
-    p {
-      margin: 5px 0;
-      color: #555;
-    }
-
-    .box {
-      background: #ffe6f0;
-      border-radius: 15px;
-      padding: 10px;
-      margin: 10px 0;
-      font-size: 14px;
-      color: #222;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .highlight {
+    .title {
+      font-size: 22px;
       color: #d63384;
       font-weight: bold;
+    }
+    .subtitle {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .highlight {
+      color: #e60073;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #660033;
     }
   </style>
 </head>
 <body>
+
   <div class="card">
-    <img src="https://i.ibb.co/4f6wz3T/profile.jpg" alt="صورة شخصية">
-    <h2>✨ بطاقة المعلومات ✨</h2>
-    <p>مرحباً بكم في موقعي 💖</p>
+    <img src="https://i.ibb.co/YdM3w2s/user.png" alt="صورة شخصية" style="width:120px;height:120px;border-radius:50%;border:4px solid white;">
+    <h2 class="title">✨ بطاقة المعلومات الشخصية ✨</h2>
+    <p class="subtitle">مرحباً بكم في ملفي الشخصي 💖</p>
+  </div>
 
-    <div class="box">
-      🕒 <span id="time"></span><br>
-      📅 <span id="date"></span>
-    </div>
+  <div class="card">
+    <p>⏰ توقيت العراق الآن</p>
+    <p id="time" class="highlight"></p>
+  </div>
 
-    <div class="box">
-      👥 عدد زوار موقعي: <span class="highlight">1</span> زائر
-    </div>
+  <div class="card">
+    <p>📍 السكن: <span class="highlight">العراق – ذي قار</span></p>
+  </div>
 
-    <div class="box">
-      🙋‍♂️ الاسم: <span class="highlight">اسمك هنا</span>
-    </div>
+  <div class="card">
+    <p class="title">💖 هواياتي المفضلة 💖</p>
+    <ul style="list-style:none;padding:0;">
+      <li>⚽ الرياضة</li>
+      <li>📚 قراءة كتب التاريخ</li>
+      <li>🎌 مشاهدة الأنمي</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p class="title">👤 الاسم: <span class="highlight">ابـاذر</span></p>
+  </div>
+
+  <div class="footer">
+    المطور • 2025
   </div>
 
   <script>
     function updateTime() {
-      const now = new Date();
-      const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      document.getElementById("time").textContent = now.toLocaleTimeString("ar-IQ", options);
-      document.getElementById("date").textContent = now.toLocaleDateString("ar-IQ");
+      const options = { timeZone: 'Asia/Baghdad', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById('time').textContent = new Date().toLocaleTimeString('ar-IQ', options);
     }
     setInterval(updateTime, 1000);
     updateTime();
   </script>
+
 </body>
 </html>
