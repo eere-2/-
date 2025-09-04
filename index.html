@@ -1,123 +1,248 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>✨ الملف الشخصي - ابـاذر ✨</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الملف الشخصي – أبـاذر</title>
+  <link rel="preconnect" href="https://api.countapi.xyz">
   <style>
-    body {
-      font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      color: #333;
+    :root{
+      --bg1:#ffe2f0;
+      --bg2:#ffd9ec;
+      --card:#fff6fb;
+      --accent:#ff4f8b;
+      --accent2:#7a2cf0;
+      --txt:#4a3254;
+      --muted:#7b6a7f;
+      --ring: 18px;
+      --radius:22px;
+      --shadow: 0 10px 30px rgba(255,79,139,.18);
     }
-    .card {
-      background: #fff0f6;
-      margin: 15px;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Tajawal", system-ui, -apple-system, Segoe UI, Roboto, "Noto Naskh Arabic", sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, var(--bg1), transparent 60%),
+                  radial-gradient(1200px 600px at 120% 10%, var(--bg2), transparent 60%),
+                  #ffeaf4;
+      color:var(--txt);
     }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
+    .wrap{
+      max-width: 880px;
+      margin: 32px auto 80px;
+      padding: 0 16px;
+    }
+    .hero{
+      background: linear-gradient(180deg, #ffeaf4, #ffe0f1);
+      border: 1px solid #ffd3ea;
+      border-radius: calc(var(--radius) + 6px);
+      padding: 28px 20px 8px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .avatar{
+      width: 140px;height:140px;border-radius: 50%;
+      border: 6px solid #fff;
+      outline: 5px solid #ffd3ea;
       object-fit: cover;
-      border: 4px solid #fff;
-      margin-top: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display:block;
+      margin: -70px auto 10px; /* يطلع نصف فوق الكرت */
+      background:#f7d8e7;
     }
-    .title {
-      font-size: 22px;
-      color: #d63384;
-      font-weight: bold;
-      margin-bottom: 10px;
+    .title{
+      text-align:center;
+      font-size: 28px;
+      font-weight:800;
+      color:#7a2cf0;
+      margin: 8px 0 6px;
     }
-    .highlight {
-      color: #e60073;
-      font-weight: bold;
+    .subtitle{
+      text-align:center;
+      margin:0 0 18px;
+      color:var(--muted);
+      font-weight:600;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+    .grid{
+      display:grid;
+      gap:14px;
+      grid-template-columns: 1fr;
     }
-    ul li {
-      font-size: 16px;
-      margin: 5px 0;
+    @media (min-width:720px){
+      .grid{grid-template-columns: 1fr 1fr}
     }
-    .footer {
-      margin: 20px;
-      font-size: 13px;
-      color: #660033;
+    .card{
+      background: var(--card);
+      border:1px solid #ffd3ea;
+      border-radius: var(--radius);
+      padding:16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .row{
+      display:flex;align-items:center;gap:12px;
+    }
+    .badge{
+      min-width:38px;min-height:38px;border-radius:14px;
+      display:grid;place-items:center;
+      background:#ffe3f1;border:1px solid #ffd3ea;
+      font-size:20px;
+    }
+    h3{margin:0;font-size:20px;color:#b01766}
+    p{margin:4px 0 0;font-size:16px;color:var(--txt)}
+    .muted{color:var(--muted)}
+    .counter{
+      font-size:28px;font-weight:800;color:#b01766;
+    }
+    .quote{
+      text-align:center;
+      padding:24px 18px;
+      border:2px dashed #ffb9d3;
+      border-radius: calc(var(--radius) + 6px);
+      background:#fff8fb;
+      font-size:20px;
+      font-weight:700;
+      color:#b01766;
+    }
+    .foot{
+      text-align:center;color:#9b7fa5;margin-top:20px;font-size:14px
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <!-- رأس البطاقة -->
+    <section class="hero card" style="padding-top:80px">
+      <!-- غيّر src إلى صورتك: ارفع me.jpg بالمستودع -->
+      <img class="avatar" src="me.jpg" alt="صورة أبـاذر">
+      <div class="title">بطاقة المعلومات ✨</div>
+      <p class="subtitle">مرحباً بكم في ملفي الشخصي</p>
 
-  <!-- الصورة الشخصية -->
-  <div class="card">
-    <img src="your-photo.jpg" alt="صورة شخصية" class="profile-pic">
-    <p class="title">✨ بطاقة المعلومات الشخصية ✨</p>
-  </div>
+      <div class="grid">
+        <!-- 1) توقيت العراق الآن -->
+        <div class="card">
+          <div class="row">
+            <div class="badge">🕒</div>
+            <div>
+              <h3>توقيت العراق الآن</h3>
+              <p id="time" class="muted">—</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- التوقيت -->
-  <div class="card">
-    <p class="title">⏰ توقيت العراق الآن</p>
-    <p id="time" class="highlight"></p>
-  </div>
+        <!-- 2) الاسم -->
+        <div class="card">
+          <div class="row">
+            <div class="badge">👤</div>
+            <div>
+              <h3>الاسم</h3>
+              <p>أبـاذر</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- الاسم -->
-  <div class="card">
-    <p class="title">👤 الاسم</p>
-    <p class="highlight">ابـاذر</p>
-  </div>
+        <!-- 3) السكن -->
+        <div class="card">
+          <div class="row">
+            <div class="badge">📍</div>
+            <div>
+              <h3>السكن</h3>
+              <p>العراق – ذي قار</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- السكن -->
-  <div class="card">
-    <p class="title">📍 السكن</p>
-    <p class="highlight">العراق – ذي قار</p>
-  </div>
+        <!-- 4) عداد الزوار -->
+        <div class="card">
+          <div class="row">
+            <div class="badge">👥</div>
+            <div>
+              <h3>عدد زوار موقعي</h3>
+              <p class="counter"><span id="visits">—</span> زائر</p>
+              <p class="muted" style="font-size:13px">يُحتسب تلقائيًا عند فتح الصفحة</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- السيرة الذاتية -->
-  <div class="card">
-    <p class="title">📖 السيرة الذاتية</p>
-    <p class="highlight">ناجح بمعدل 99.14</p>
-  </div>
+        <!-- 5) السيرة الذاتية -->
+        <div class="card">
+          <div class="row">
+            <div class="badge">📜</div>
+            <div>
+              <h3>السيرة الذاتية</h3>
+              <p>ناجح بمعدل <strong>99.14</strong></p>
+            </div>
+          </div>
+        </div>
 
-  <!-- التخصص -->
-  <div class="card">
-    <p class="title">🎓 التخصص</p>
-    <p class="highlight">صيدلة</p>
-  </div>
+        <!-- 6) التخصص -->
+        <div class="card">
+          <div class="row">
+            <div class="badge">🎓</div>
+            <div>
+              <h3>التخصص</h3>
+              <p>صيدلة</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- الهوايات -->
-  <div class="card">
-    <p class="title">💡 هواياتي</p>
-    <ul>
-      <li>⚽ الرياضة</li>
-      <li>📚 قراءة كتب التاريخ</li>
-    </ul>
-  </div>
+        <!-- 7) الهوايات -->
+        <div class="card" style="grid-column: 1 / -1">
+          <div class="row">
+            <div class="badge">💖</div>
+            <div>
+              <h3>هواياتي المفضلة</h3>
+              <p>• الرياضة</p>
+              <p>• القراءة لكتب التاريخ</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- مقولة اليوم -->
-  <div class="card">
-    <p class="title">🌸 مقولة اليوم 🌸</p>
-    <p class="highlight">(( سَيعودُ حَقُك ذاتَ يوم ))</p>
-  </div>
+      <!-- 8) مقولة اليوم -->
+      <div class="quote" style="margin-top:14px">
+        (( سَيعودُ حَقُك ذاتَ يوم ))
+      </div>
+    </section>
 
-  <div class="footer">
-    المطور • 2025
+    <p class="foot">© أبـاذر • يُحدّث الوقت تلقائياً بتوقيت بغداد</p>
   </div>
 
   <script>
-    function updateTime() {
-      const options = { timeZone: 'Asia/Baghdad', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      document.getElementById('time').textContent = new Date().toLocaleTimeString('ar-IQ', options);
+    // 1) توقيت العراق الآن (Asia/Baghdad)
+    function fmtTime(){
+      const now = new Date();
+      const s = now.toLocaleString('ar-IQ', {
+        timeZone: 'Asia/Baghdad',
+        hour: '2-digit', minute:'2-digit', second:'2-digit',
+        weekday:'long', year:'numeric', month:'long', day:'numeric'
+      });
+      document.getElementById('time').textContent = s;
     }
-    setInterval(updateTime, 1000);
-    updateTime();
-  </script>
+    fmtTime();
+    setInterval(fmtTime, 1000);
 
+    // 2) عدّاد الزوار عبر CountAPI (Namespace مخصص)
+    (function(){
+      const ns = 'abather-profile-2025';
+      const key = 'visits';
+      const url = `https://api.countapi.xyz/hit/${encodeURIComponent(ns)}/${encodeURIComponent(key)}`;
+      fetch(url)
+        .then(r => r.json())
+        .then(data => {
+          document.getElementById('visits').textContent = (data && data.value) ? data.value.toLocaleString('ar-IQ') : '1';
+        })
+        .catch(() => {
+          // احتياطي: نخزن محلياً إذا ما اشتغل الإنترنت
+          try{
+            const k='fallback_visits';
+            const v=(parseInt(localStorage.getItem(k)||'0',10)+1);
+            localStorage.setItem(k, v);
+            document.getElementById('visits').textContent = v.toLocaleString('ar-IQ');
+          }catch(e){
+            document.getElementById('visits').textContent = '—';
+          }
+        });
+    })();
+  </script>
 </body>
 </html>
